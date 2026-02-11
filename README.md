@@ -5,6 +5,8 @@ Simle Full Stack Website using MVC Framework
 ## Features
 - User list
 - Add New Users
+- Update a User
+- View a User
 - Tailwind CSS UI
 
 ---

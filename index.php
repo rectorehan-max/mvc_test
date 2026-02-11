@@ -14,6 +14,17 @@ switch ($action) {
     case 'store':
         $controller->store();
         break;
+    case 'edit':
+        $controller->edit();
+        break;
+
+    case 'update':
+        $controller->update();
+        break;
+
+    case 'show':
+        $controller->show();
+        break;
     default:
         $controller->index();
         break;

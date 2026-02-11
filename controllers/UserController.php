@@ -26,5 +26,42 @@ class UserController {
             exit;
         }
     }
+
+    public function edit() {
+        $id = $_GET['id'] ?? null;
+
+        if ($id) {
+            $user = $this->user->getById($id);
+            require __DIR__ . '/../views/edit.php';
+        } else {
+            header("Location: index.php");
+            exit;
+        }
+    }
+
+    public function update() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_GET['id'] ?? null;
+
+            if ($id) {
+                $this->user->update($id, $_POST['username'], $_POST['email']);
+            } else {
+                header("Location: index.php");
+                exit;
+            }
+        }
+    }
+
+    public function show() {
+        $id = $_GET['id'] ?? null;
+
+        if ($id) {
+            $user = $this->user->getById($id);
+            require __DIR__ . '/../views/show.php';
+        } else {
+            header("Location: index.php");
+            exit;
+        }
+    }
 }
 
